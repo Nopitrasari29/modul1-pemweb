@@ -1,0 +1,115 @@
+body {
+    font-family: 'Georgia', serif;
+    margin: 0;
+    padding: 0;
+    background-color: #fff8e1; /* Warna krem lebih cerah */
+    color: #5d4b39; /* Warna coklat yang sedikit lebih gelap */
+}
+
+nav {
+    background-color: #8b6f5b; /* Coklat vintage yang lebih gelap */
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+}
+
+nav ul li {
+    margin-left: 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #fff; /* Putih untuk kontras lebih baik */
+    font-weight: bold;
+}
+
+nav ul li a:hover {
+    color: #ffcc00; /* Kuning lebih cerah saat hover */
+}
+
+header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 80vh;
+    background-image: url('vintage-coffee-background.jpg'); /* Ganti dengan gambar yang sesuai */
+    background-size: cover;
+    background-position: center;
+    color: #fff; /* Teks putih untuk kontras yang lebih baik */
+    text-align: center;
+}
+
+header h1 {
+    font-family: 'Courier New', monospace;
+    font-size: 3rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Bayangan teks lebih kuat */
+}
+
+header p {
+    font-size: 1.4rem;
+    margin: 20px 0;
+}
+
+.cta {
+    background-color: #ffcc00; /* Kuning lebih cerah */
+    color: black;
+    padding: 12px 24px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+    transition: background-color 0.3s ease;
+}
+
+.cta:hover {
+    background-color: #e6b800; /* Kuning lebih gelap saat hover */
+}
+
+main {
+    padding: 60px;
+    text-align: center;
+}
+
+footer {
+    background-color: #8b6f5b; /* Coklat vintage yang lebih gelap */
+    color: #fff; /* Putih untuk kontras lebih baik */
+    text-align: center;
+    padding: 30px;
+    font-size: 1rem;
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 10px;
+}
+
+.gallery img {
+    width: 100%;
+    border-radius: 8px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    header {
+        height: 60vh;
+    }
+
+    .gallery {
+        grid-template-columns: 1fr;
+    }
+}
