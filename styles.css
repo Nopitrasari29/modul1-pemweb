@@ -60,6 +60,7 @@ header {
     text-align: center;
     color: #fff;
     position: relative;
+    z-index: 1;
 }
 
 .header-content {
