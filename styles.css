@@ -1,13 +1,20 @@
-body {
-    font-family: 'Georgia', serif;
+/* Reset */
+* {
     margin: 0;
     padding: 0;
-    background-color: #fff8e1; /* Warna krem lebih cerah */
-    color: #5d4b39; /* Warna coklat yang sedikit lebih gelap */
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #fff8e1;
+    color: #5d4b39;
 }
 
 nav {
-    background-color: #8b6f5b; /* Coklat vintage yang lebih gelap */
+    background-color: #563d2d;
     padding: 10px;
     display: flex;
     justify-content: space-between;
@@ -26,76 +33,140 @@ nav ul li {
 
 nav ul li a {
     text-decoration: none;
-    color: #fff; /* Putih untuk kontras lebih baik */
+    color: #fff;
     font-weight: bold;
+    transition: color 0.3s ease;
 }
 
 nav ul li a:hover {
-    color: #ffcc00; /* Kuning lebih cerah saat hover */
+    color: #ffcc00;
+}
+
+.logo a {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #ffcc00;
 }
 
 header {
     display: flex;
-    flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 80vh;
-    background-image: url('vintage-coffee-background.jpg'); /* Ganti dengan gambar yang sesuai */
+    height: 100vh;
+    background-image: url('vintage-coffee-background.jpg');
     background-size: cover;
     background-position: center;
-    color: #fff; /* Teks putih untuk kontras yang lebih baik */
     text-align: center;
+    color: #fff;
+    position: relative;
+}
+
+.header-content {
+    animation: fadeInUp 2s ease-in-out;
+}
+
+#tagline {
+    color: blueviolet;
 }
 
 header h1 {
-    font-family: 'Courier New', monospace;
-    font-size: 3rem;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Bayangan teks lebih kuat */
+    font-family: 'Playfair Display', serif;
+    font-size: 3.5rem;
+    line-height: 1.2;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
 }
 
 header p {
-    font-size: 1.4rem;
-    margin: 20px 0;
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+}
+
+/* Produk */
+.products {
+    padding: 40px;
+    text-align: center;
+}
+
+.products h2 {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    color: #5d4b39;
+}
+
+/* Grid Container */
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.grid-item {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+}
+
+.grid-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.grid-item img {
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+.grid-item h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: #563d2d;
+}
+
+.grid-item p {
+    font-size: 1rem;
+    color: #5d4b39;
 }
 
 .cta {
-    background-color: #ffcc00; /* Kuning lebih cerah */
+    background-color: #ffcc00;
     color: black;
-    padding: 12px 24px;
+    padding: 15px 30px;
     text-decoration: none;
     border-radius: 5px;
-    font-size: 1.1rem;
+    font-size: 1.2rem;
     font-weight: bold;
     box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 .cta:hover {
-    background-color: #e6b800; /* Kuning lebih gelap saat hover */
-}
-
-main {
-    padding: 60px;
-    text-align: center;
+    background-color: #e6b800;
+    transform: scale(1.05);
 }
 
 footer {
-    background-color: #8b6f5b; /* Coklat vintage yang lebih gelap */
-    color: #fff; /* Putih untuk kontras lebih baik */
+    background-color: #563d2d;
+    color: #fff;
     text-align: center;
-    padding: 30px;
-    font-size: 1rem;
+    padding: 20px;
+    font-size: 0.9rem;
 }
 
-.gallery {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 10px;
-}
-
-.gallery img {
-    width: 100%;
-    border-radius: 8px;
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 /* Responsive Design */
@@ -106,10 +177,18 @@ footer {
     }
 
     header {
-        height: 60vh;
+        height: 80vh;
     }
 
-    .gallery {
+    header h1 {
+        font-size: 2.5rem;
+    }
+
+    .cta {
+        font-size: 1rem;
+    }
+
+    .grid-container {
         grid-template-columns: 1fr;
     }
 }
