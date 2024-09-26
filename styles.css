@@ -67,10 +67,6 @@ header {
     animation: fadeInUp 2s ease-in-out;
 }
 
-#tagline {
-    color: blueviolet;
-}
-
 header h1 {
     font-family: 'Playfair Display', serif;
     font-size: 3.5rem;
