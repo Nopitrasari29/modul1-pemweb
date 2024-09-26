@@ -1,25 +1,30 @@
-/* Reset */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+
 body {
     font-family: 'Montserrat', sans-serif;
-    margin: 0;
+    color: #fff;
     padding: 0;
-    background-color: #fff8e1;
-    color: #5d4b39;
-}
-
-.home {
+    margin: 0;
     background-image: url('vintage-coffee-background.jpeg');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
+    text-align: center;
 }
 
+footer {
+    background-color: #563d2d;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+}
+
+/*Navigation Bar*/
 nav {
     background-color: #563d2d;
     padding: 10px;
@@ -115,7 +120,7 @@ header p {
 .products h2 {
     font-size: 2.5rem;
     margin-bottom: 30px;
-    color: #5d4b39;
+    color: #fff;
 }
 
 /* Grid Container */
