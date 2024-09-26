@@ -1,4 +1,4 @@
-/* Reset */
+
 * {
     margin: 0;
     padding: 0;
@@ -13,12 +13,24 @@ body {
     color: #5d4b39;
 }
 
+.home {
+    background-image: url('vintage-coffee-background.jpeg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
 nav {
     background-color: #563d2d;
     padding: 10px;
+    height: 60px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
 }
 
 nav ul {
@@ -54,14 +66,12 @@ header {
     align-items: center;
     justify-content: center;
     height: 100vh;
-    background-image: url('vintage-coffee-background.jpeg');
-    background-size: cover;
-    background-position: center;
     text-align: center;
     color: #fff;
     position: relative;
-    z-index: 1;
 }
+
+
 
 .header-content {
     animation: fadeInUp 2s ease-in-out;
@@ -79,6 +89,29 @@ header p {
     font-size: 1.2rem;
     margin-bottom: 30px;
 }
+
+/* layanan kami */
+.services {
+    background-color: #fce380;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    max-width: 600px;
+    max-height: 1500px;
+    margin: 20px auto;
+    text-align: center;
+    color: #1d140f;
+}
+
+.services > h2 {
+    padding: 15px;
+    margin-bottom: 15px;
+}
+
+.services > p {
+    margin-bottom: 15px;
+}
+
 
 /* Produk */
 .products {
@@ -189,3 +222,4 @@ footer {
         grid-template-columns: 1fr;
     }
 }
+
