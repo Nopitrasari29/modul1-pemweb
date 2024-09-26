@@ -13,6 +13,13 @@ body {
     color: #5d4b39;
 }
 
+.home {
+    background-image: url('vintage-coffee-background.jpeg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
 nav {
     background-color: #563d2d;
     padding: 10px;
@@ -80,9 +87,31 @@ header p {
     margin-bottom: 30px;
 }
 
+/* layanan kami */
+.services {
+    background-color: #fce380;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    max-width: 600px;
+    max-height: 1500px;
+    margin: 20px auto;
+    text-align: center;
+    color: #1d140f;
+}
+
+.services > h2 {
+    padding: 15px;
+    margin-bottom: 15px;
+}
+
+.services > p {
+    margin-bottom: 15px;
+}
+
 /* Produk */
 .products {
-    padding: 40px;
+    padding: 100px;
     text-align: center;
 }
 
