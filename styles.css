@@ -1,15 +1,14 @@
+/* Resetting Styles */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-
+/* Body and General Styles */
 body {
     font-family: 'Montserrat', sans-serif;
     color: #fff;
-    padding: 0;
-    margin: 0;
     background-image: url('vintage-coffee-background.jpeg');
     background-size: cover;
     background-position: center;
@@ -25,7 +24,7 @@ footer {
     margin-top: 30px;
 }
 
-/*Navigation Bar*/
+/* Navigation Bar */
 nav {
     background-color: #563d2d;
     padding: 10px;
@@ -37,7 +36,7 @@ nav {
 nav ul {
     list-style: none;
     display: flex;
-    margin: 0;
+    flex-wrap: wrap;
 }
 
 nav ul li {
@@ -62,6 +61,7 @@ nav ul li a:hover {
     color: #ffcc00;
 }
 
+/* Header */
 header {
     display: flex;
     align-items: center;
@@ -69,8 +69,6 @@ header {
     height: 100vh;
     text-align: center;
     color: #fff;
-    position: relative;
-    z-index: 1;
 }
 
 .header-content {
@@ -90,14 +88,13 @@ header p {
     margin-bottom: 30px;
 }
 
-/* layanan kami */
+/* Services Section */
 .services {
     background-color: #fce380;
     border-radius: 10px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
     padding: 20px;
     max-width: 600px;
-    max-height: 1500px;
     margin: 20px auto;
     text-align: center;
     color: #1d140f;
@@ -112,7 +109,7 @@ header p {
     margin-bottom: 15px;
 }
 
-/* Produk */
+/* Products Section */
 .products {
     padding: 100px;
     text-align: center;
@@ -162,6 +159,7 @@ header p {
     color: #5d4b39;
 }
 
+
 .cta {
     background-color: #ffcc00;
     color: black;
@@ -187,6 +185,41 @@ footer {
     font-size: 0.9rem;
 }
 
+/* Gallery Section */
+.gallery-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 15px;
+    padding: 20px;
+}
+
+.gallery-item {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+.gallery-item:hover {
+    transform: scale(1.05);
+}
+
+.gallery-title {
+    font-size: 2.5rem;
+    color: #ffcc00;
+    text-transform: uppercase;
+    font-family: 'Playfair Display', serif;
+    letter-spacing: 2px;
+    margin: 30px 0;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+    background: linear-gradient(45deg, #ffe259, #ffa751);
+    background-clip: text;
+    color: transparent;
+    animation: fadeIn 2s ease-in-out;
+}
+
+/* Keyframes for animations */
 @keyframes fadeInUp {
     0% {
         opacity: 0;
@@ -197,65 +230,6 @@ footer {
         transform: translateY(0);
     }
 }
-
-/* Responsive Design */
-@media (max-width: 768px) {
-    nav ul {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    header {
-        height: 80vh;
-    }
-
-    header h1 {
-        font-size: 2.5rem;
-    }
-
-    .cta {
-        font-size: 1rem;
-    }
-
-    .grid-container {
-        grid-template-columns: 1fr;
-    }
-}
-
-/* Gallery */ 
-.gallery-container {
-    display: grid; 
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); 
-    gap: 15px;
-    padding: 20px; 
-}
-
-.gallery-item {
-    width: 100%;
-    height: 200px;
-    object-fit: cover; 
-    border-radius: 10px; 
-    transition: transform 0.3s ease;
-}
-
-.gallery-item:hover {
-    transform: scale(1.05);
-}
-
-.gallery-title {
-    font-size: 2.5rem; 
-    color: #ffcc00; 
-    text-transform: uppercase; 
-    font-family: 'Playfair Display', serif; 
-    letter-spacing: 2px; 
-    margin: 30px 0;
-    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5); 
-    background: linear-gradient(45deg, #ffe259, #ffa751); 
-    background-clip: text; 
-    color: transparent; 
-    animation: fadeIn 2s ease-in-out; 
-}
-
 
 @keyframes fadeIn {
     0% {
