@@ -224,7 +224,7 @@ header p {
     background: linear-gradient(45deg, #ffe259, #ffa751);
     background-clip: text;
     color: transparent;
-    animation: fadeIn 2s ease-in-out;
+    animation: fadeIn 0.5s ease-in-out;
 }
 
 /* Keyframes for animations */
