@@ -18,11 +18,29 @@ footer {
     background-color: #563d2d;
     color: #ffffff;
     text-align: center;
-    padding: 10px 0;
+    padding: 1rem; /* Gunakan rem untuk unit yang responsif */
     position: relative;
     width: 100%;
     bottom: 0;
-    margin-top: 30px;
+    margin-top: 2rem; /* Gunakan rem untuk unit yang responsif */
+    display: flex; /* Menggunakan flexbox */
+    flex-direction: column; /* Mengatur elemen dalam kolom */
+    align-items: center; /* Mengatur konten agar berada di tengah */
+}
+
+@media (max-width: 768px) {
+    footer {
+        padding: 0.5rem; /* Mengurangi padding untuk layar kecil */
+        margin-top: 1rem; /* Mengurangi margin untuk layar kecil */
+    }
+}
+
+@media (max-width: 480px) {
+    footer {
+        padding: 0.3rem; /* Mengurangi padding lebih lanjut untuk layar sangat kecil */
+        margin-top: 0.5rem; /* Mengurangi margin lebih lanjut untuk layar sangat kecil */
+        font-size: 0.9rem; /* Mengurangi ukuran font untuk layar kecil */
+    }
 }
 
 nav {
@@ -132,12 +150,6 @@ header p {
 .products {
     padding: 100px;
     text-align: center;
-}
-
-.products h2 {
-    font-size: 2.5rem;
-    margin-bottom: 30px;
-    color: #fff;
 }
 
 .grid-container {
@@ -450,22 +462,22 @@ main {
     height: 50px;
     border-radius: 50%; 
     border: 2px solid #ffcc00; 
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add shadow */
-    transition: transform 0.3s ease, border-color 0.3s ease; /* Smooth transition */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+    transition: transform 0.3s ease, border-color 0.3s ease; 
 }
 
 .avatar img:hover {
-    transform: scale(1.1);         /* Slightly enlarge the avatar */
-    border-color: #ffa500;         /* Change border color on hover */
+    transform: scale(1.1);         
+    border-color: #ffa500;         
 }
 
 .avatar img:active {
-    transform: scale(0.95);         /* Slightly shrink when clicked */
+    transform: scale(0.95);         
 }
 
 .avatar img.selected {
-    border-color: #ff5733; /* Change border color when selected */
-    border-width: 3px;     /* Thicker border for selected state */
+    border-color: #ff5733; 
+    border-width: 3px;     
 }
 
 .chat-bubble {
