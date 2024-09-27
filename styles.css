@@ -31,16 +31,18 @@ nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-wrap: wrap; /* Make the nav items wrap */
 }
 
 nav ul {
     list-style: none;
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: wrap; /* Wrap navigation items */
+    justify-content: center; /* Center nav items */
 }
 
 nav ul li {
-    margin-left: 20px;
+    margin: 10px 20px; /* Adjust margins for better spacing */
 }
 
 nav ul li a {
@@ -56,10 +58,25 @@ nav ul li a:hover {
 
 .logo a {
     font-family: 'Playfair Display', serif;
-    font-size: 1.8rem;
+    font-size: 1.8rem; /* Base font size */
     font-weight: 700;
     color: #ffcc00;
+    text-decoration: none; /* Ensure there's no underline */
+    transition: font-size 0.3s ease; /* Smooth transition for font size change */
 }
+
+@media (max-width: 768px) {
+    .logo a {
+        font-size: 1.5rem; /* Smaller font size for tablets */
+    }
+}
+
+@media (max-width: 480px) {
+    .logo a {
+        font-size: 1.2rem; /* Smaller font size for mobile devices */
+    }
+}
+
 
 /* Header */
 header {
@@ -159,7 +176,6 @@ header p {
     color: #5d4b39;
 }
 
-
 .cta {
     background-color: #ffcc00;
     color: black;
@@ -175,14 +191,6 @@ header p {
 .cta:hover {
     background-color: #e6b800;
     transform: scale(1.05);
-}
-
-footer {
-    background-color: #563d2d;
-    color: #fff;
-    text-align: center;
-    padding: 20px;
-    font-size: 0.9rem;
 }
 
 /* Gallery Section */
@@ -239,5 +247,68 @@ footer {
     100% {
         opacity: 1;
         transform: translateY(0);
+    }
+}
+
+/* Media Queries for Responsive Design */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column; /* Stack nav items vertically */
+        align-items: center; /* Center items */
+    }
+
+    header h1 {
+        font-size: 2.5rem; /* Adjust font size for smaller screens */
+    }
+
+    header p {
+        font-size: 1rem; /* Adjust font size for smaller screens */
+        margin-bottom: 20px; /* Adjust margin for better spacing */
+    }
+
+    .cta {
+        padding: 12px 20px; /* Adjust padding for smaller screens */
+        font-size: 1rem; /* Adjust font size for buttons */
+    }
+
+    .services,
+    .products {
+        padding: 20px; /* Reduce padding for smaller screens */
+    }
+
+    .services > h2,
+    .products h2 {
+        font-size: 1.8rem; /* Adjust headings for smaller screens */
+    }
+
+    .gallery-title {
+        font-size: 2rem; /* Adjust font size for the gallery title */
+    }
+
+    .grid-item h3 {
+        font-size: 1.3rem; /* Adjust grid item heading size */
+    }
+
+    .grid-item p {
+        font-size: 0.9rem; /* Adjust grid item text size */
+    }
+}
+
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 2rem; /* Further adjust for very small screens */
+    }
+
+    header p {
+        font-size: 0.9rem; /* Further adjust for very small screens */
+    }
+
+    nav ul li {
+        margin: 5px 0; /* Adjust margins for small screens */
+    }
+
+    .cta {
+        padding: 10px 15px; /* Further adjust padding for buttons */
+        font-size: 0.9rem; /* Further adjust font size for buttons */
     }
 }
