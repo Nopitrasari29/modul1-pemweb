@@ -22,7 +22,6 @@ footer {
     position: relative;
     width: 100%;
     bottom: 0;
-    margin-top: 2rem; /* Gunakan rem untuk unit yang responsif */
     display: flex; /* Menggunakan flexbox */
     flex-direction: column; /* Mengatur elemen dalam kolom */
     align-items: center; /* Mengatur konten agar berada di tengah */
@@ -127,25 +126,50 @@ header p {
     margin-bottom: 30px;
 }
 
-.services {
-    background-color: #fce380;
-    border-radius: 10px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-    padding: 20px;
-    max-width: 600px;
-    margin: 20px auto;
+.layanan-kami {
     text-align: center;
-    color: #1d140f;
-}
-
-.services > h2 {
-    padding: 15px;
-    margin-bottom: 15px;
-}
-
-.services > p {
-    margin-bottom: 15px;
-}
+    padding: 50px 30px;
+    background-color: rgba(245, 245, 245, 0.8);
+  }
+  
+  .layanan-kami h2 {
+    font-size: 36px;
+    color: #563d2d;
+    margin-bottom: 30px;
+    font-family: 'Playfair Display', serif;
+  }
+  
+  .layanan-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+  }
+  
+  .layanan-item {
+    width: 30%;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .layanan-item img {
+    width: 40%;
+    height: auto;
+    border-radius: 8px;
+  }
+  
+  .layanan-item h3 {
+    font-size: 24px;
+    margin-top: 15px;
+    color: #563d2d;
+    font-family: 'Montserrat', sans-serif;
+    padding: 10px;
+  }
+  
+  .layanan-item p {
+    font-size: 16px;
+    color: #333;
+    font-family: 'Montserrat', sans-serif;
+  }
 
 .products {
     padding: 100px;
