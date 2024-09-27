@@ -461,20 +461,14 @@ main {
     color: #000; 
 }
 
-
-.customer-name {
-    font-weight: bold;
-    color: #000;
-    margin-top: 5px;
-    font-size: 0.9rem;
+.sender-name {
+    font-size: 0.9em;     
+    color: green;          
+    margin-top: 5px;        
+    font-weight: bold;      
+    text-align: left;        
 }
 
-.customer-name {
-    font-weight: bold;
-    color: #563d2d;
-    margin-top: 5px; 
-    font-size: 0.9rem; 
-}
 
 @media (max-width: 768px) {
     .chat-bubble {
