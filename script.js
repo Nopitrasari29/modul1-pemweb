@@ -89,10 +89,42 @@ function processCheckout() {
     window.location.href = 'index.html';  // Kembali ke halaman utama
 }
 
+// Fungsi untuk mengambil data produk dari API DummyJSON
+function fetchProducts() {
+    fetch('https://dummyjson.com/products')
+        .then(response => response.json())
+        .then(data => {
+            const products = data.products;  // Dapatkan array produk dari data API
+            displayProducts(products);  // Panggil fungsi untuk menampilkan produk
+        })
+        .catch(error => console.error('Error fetching products:', error));
+}
+
+// Fungsi untuk menampilkan produk di halaman
+function displayProducts(products) {
+    const productsContainer = document.getElementById('products-container');
+
+    products.forEach(product => {
+        // Buat elemen HTML untuk setiap produk
+        const productElement = document.createElement('div');
+        productElement.classList.add('product');
+        productElement.innerHTML = `
+            <h3>${product.title}</h3>
+            <p>${product.description}</p>
+            <p>Harga: Rp${product.price}</p>
+            <button onclick="addToCart('${product.title}', ${product.price})">Tambah ke Keranjang</button>
+        `;
+
+        // Tambahkan elemen produk ke container
+        productsContainer.appendChild(productElement);
+    });
+}
+
 // Saat halaman dimuat
 window.onload = function () {
     if (window.location.pathname.includes('products.html')) {
         updateCart();  // Update cart di halaman produk
+        fetchProducts();  // Ambil produk dari API DummyJSON
     }
 
     if (window.location.pathname.includes('checkout.html')) {
