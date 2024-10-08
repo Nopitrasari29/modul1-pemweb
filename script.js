@@ -32,6 +32,19 @@ function addToCart(productName, productPrice) {
     showNotification();  // Panggil notifikasi setelah produk ditambahkan
 }
 
+// Fungsi untuk mengurangi kuantitas produk di keranjang
+function decreaseQuantity(productName) {
+    const existingProduct = cart.find(item => item.name === productName);
+    
+    if (existingProduct && existingProduct.quantity > 1) {
+        existingProduct.quantity -= 1;
+    } else {
+        removeFromCart(productName);  // Jika kuantitas 1, maka hapus produk
+    }
+
+    updateCart();  // Perbarui tampilan keranjang
+}
+
 // Fungsi untuk memperbarui tampilan keranjang dan Local Storage
 function updateCart() {
     const cartItemsDiv = document.getElementById('cart-items');
@@ -52,7 +65,10 @@ function updateCart() {
         cartItemElement.innerHTML = `
             <h4>${item.name}</h4>
             <p>Harga: Rp${item.price}</p>
-            <p>Kuantitas: ${item.quantity}</p>
+            <p>Kuantitas: ${item.quantity} 
+                <button onclick="addToCart('${item.name}', ${item.price})">+</button>
+                <button onclick="decreaseQuantity('${item.name}')">-</button>
+            </p>
             <button onclick="removeFromCart('${item.name}')">Hapus</button>
         `;
 
