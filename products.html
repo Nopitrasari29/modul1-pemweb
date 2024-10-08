@@ -18,45 +18,58 @@
         </ul>
     </nav>
 
+    <!-- Dropdown Filter Kategori -->
+    <div class="filter-container">
+        <label for="category-filter">Filter Kategori:</label>
+        <select id="category-filter" onchange="filterProductsByCategory(this.value)">
+            <option value="all">Semua Produk</option>
+            <option value="kopi">Kopi</option>
+            <option value="makanan">Makanan</option>
+            <option value="minuman">Minuman</option>
+            <option value="dessert">Dessert</option>
+        </select>
+    </div>
+
     <main class="products">
         <h2 class="gallery-title">Produk Kami</h2>
-        <div class="grid-container">
+        <div id="products-container" class="grid-container">
+
             <!-- Kategori Kopi -->
-            <div class="grid-item">
+            <div class="grid-item" data-category="kopi">
                 <img src="foto_kopi/kopi-gayo.jpeg" alt="Kopi Gayo">
                 <h3>Kopi Gayo</h3>
-                <p>Kopi arabika khas Aceh dengan cita rasa floral. Cocok disajikan dengan metode manual brew untuk menonjolkan aroma dan rasa yang lembut.</p>
+                <p>Kopi arabika khas Aceh dengan cita rasa floral. Cocok disajikan dengan metode manual brew.</p>
                 <button class="add-to-cart" onclick="addToCart('Kopi Gayo', 50000)">
                     <span class="plus-icon">+</span>
                 </button>
             </div>
-            <div class="grid-item">
+            <div class="grid-item" data-category="kopi">
                 <img src="foto_kopi/kopi-toraja.jpg" alt="Kopi Toraja">
                 <h3>Kopi Toraja</h3>
-                <p>Kopi Toraja yang memiliki rasa earthy dengan aftertaste coklat. Nikmati dengan cara French press untuk menghasilkan cita rasa yang lebih kaya.</p>
+                <p>Kopi Toraja dengan rasa earthy dan aftertaste coklat. Nikmati dengan cara French press.</p>
                 <button class="add-to-cart" onclick="addToCart('Kopi Toraja', 60000)">
                     <span class="plus-icon">+</span>
                 </button>
             </div>
-            <div class="grid-item">
+            <div class="grid-item" data-category="kopi">
                 <img src="foto_kopi/kopi-kintamani.jpeg" alt="Kopi Kintamani">
                 <h3>Kopi Kintamani</h3>
-                <p>Kopi Bali dengan rasa fruity yang menyegarkan. Sangat enak disajikan dingin atau sebagai iced coffee.</p>
+                <p>Kopi Bali dengan rasa fruity yang menyegarkan. Cocok disajikan dingin atau iced coffee.</p>
                 <button class="add-to-cart" onclick="addToCart('Kopi Kintamani', 55000)">
                     <span class="plus-icon">+</span>
                 </button>
             </div>
-            <div class="grid-item">
+            <div class="grid-item" data-category="kopi">
                 <img src="foto_kopi/kopi-jawa.jpeg" alt="Kopi Jawa">
                 <h3>Kopi Jawa</h3>
-                <p>Kopi robusta dari Jawa dengan rasa strong dan pekat. Cocok untuk penyuka kopi yang kuat, bisa dinikmati dengan tambahan gula atau krim.</p>
+                <p>Kopi robusta dari Jawa dengan rasa strong dan pekat. Cocok untuk penyuka kopi yang kuat.</p>
                 <button class="add-to-cart" onclick="addToCart('Kopi Jawa', 45000)">
                     <span class="plus-icon">+</span>
                 </button>
             </div>
 
             <!-- Kategori Makanan -->
-            <div class="grid-item">
+            <div class="grid-item" data-category="makanan">
                 <img src="foto_makanan/nasi-goreng.jpg" alt="Nasi Goreng">
                 <h3>Nasi Goreng</h3>
                 <p>Nasi goreng dengan rempah khas Nusantara dan telur dadar.</p>
@@ -64,7 +77,7 @@
                     <span class="plus-icon">+</span>
                 </button>
             </div>
-            <div class="grid-item">
+            <div class="grid-item" data-category="makanan">
                 <img src="foto_makanan/sate-ayam.jpg" alt="Sate Ayam">
                 <h3>Sate Ayam</h3>
                 <p>Sate ayam dengan bumbu kacang khas Indonesia.</p>
@@ -72,7 +85,7 @@
                     <span class="plus-icon">+</span>
                 </button>
             </div>
-            <div class="grid-item">
+            <div class="grid-item" data-category="makanan">
                 <img src="foto_makanan/rendang.jpg" alt="Rendang">
                 <h3>Rendang</h3>
                 <p>Rendang daging sapi khas Sumatera Barat dengan bumbu rempah.</p>
@@ -82,7 +95,7 @@
             </div>
 
             <!-- Kategori Minuman -->
-            <div class="grid-item">
+            <div class="grid-item" data-category="minuman">
                 <img src="foto_minuman/es-teh-manis.jpg" alt="Es Teh Manis">
                 <h3>Es Teh Manis</h3>
                 <p>Es teh manis yang segar untuk menghilangkan dahaga.</p>
@@ -90,7 +103,7 @@
                     <span class="plus-icon">+</span>
                 </button>
             </div>
-            <div class="grid-item">
+            <div class="grid-item" data-category="minuman">
                 <img src="foto_minuman/es-cendol.jpg" alt="Es Cendol">
                 <h3>Es Cendol</h3>
                 <p>Minuman cendol khas dengan gula merah dan santan.</p>
@@ -98,17 +111,17 @@
                     <span class="plus-icon">+</span>
                 </button>
             </div>
-            <div class="grid-item">
+            <div class="grid-item" data-category="minuman">
                 <img src="foto_minuman/es-doger.jpg" alt="Es Doger">
                 <h3>Es Doger</h3>
                 <p>Es Doger khas dengan isian tape, kelapa muda, dan susu.</p>
                 <button class="add-to-cart" onclick="addToCart('Es Doger', 15000)">
                     <span class="plus-icon">+</span>
                 </button>
-            </div>           
+            </div>
 
             <!-- Kategori Dessert -->
-            <div class="grid-item">
+            <div class="grid-item" data-category="dessert">
                 <img src="foto_dessert/klepon.jpg" alt="Klepon">
                 <h3>Klepon</h3>
                 <p>Kue klepon dengan isian gula merah dan taburan kelapa parut.</p>
@@ -116,7 +129,7 @@
                     <span class="plus-icon">+</span>
                 </button>
             </div>
-            <div class="grid-item">
+            <div class="grid-item" data-category="dessert">
                 <img src="foto_dessert/lapis-legit.jpg" alt="Lapis Legit">
                 <h3>Lapis Legit</h3>
                 <p>Kue lapis legit yang lembut dengan rasa manis yang pas.</p>
@@ -124,7 +137,7 @@
                     <span class="plus-icon">+</span>
                 </button>
             </div>
-            <div class="grid-item">
+            <div class="grid-item" data-category="dessert">
                 <img src="foto_dessert/bubur-sumsum.jpg" alt="Bubur Sumsum">
                 <h3>Bubur Sumsum</h3>
                 <p>Bubur sumsum yang lembut disajikan dengan gula merah cair.</p>
