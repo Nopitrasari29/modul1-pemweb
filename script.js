@@ -148,3 +148,25 @@ window.onload = function () {
         document.getElementById('confirm-order').addEventListener('click', processCheckout);
     }
 }
+
+// Fungsi untuk memfilter produk berdasarkan kategori
+function filterProductsByCategory(category) {
+    const products = document.querySelectorAll('.grid-item');  // Ambil semua produk
+
+    products.forEach(product => {
+        // Ambil kategori produk dari atribut data-category
+        const productCategory = product.getAttribute('data-category');
+
+        // Tampilkan produk jika kategori sesuai, sembunyikan jika tidak
+        if (category === 'all' || category === productCategory) {
+            product.style.display = 'block';  // Tampilkan produk
+        } else {
+            product.style.display = 'none';   // Sembunyikan produk
+        }
+    });
+}
+
+// Memastikan semua produk tampil saat halaman pertama kali dimuat
+window.onload = function () {
+    filterProductsByCategory('all');  // Tampilkan semua produk
+};
