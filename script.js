@@ -83,6 +83,7 @@ function updateCart() {
 
     // Simpan keranjang ke Local Storage
     localStorage.setItem('cart', JSON.stringify(cart));
+    localStorage.setItem('totalPrice', totalPrice);
 }
 
 // Fungsi untuk menghapus item dari keranjang
@@ -170,3 +171,36 @@ function filterProductsByCategory(category) {
 window.onload = function () {
     filterProductsByCategory('all');  // Tampilkan semua produk
 };
+
+function displayTotalPrice() {
+    const totalPriceElement = document.getElementById('total-price');
+    const totalPrice = localStorage.getItem('totalPrice'); // Ambil total harga dari Local Storage
+
+    if (totalPrice) {
+        totalPriceElement.textContent = `Rp${totalPrice}`; // Tampilkan total harga
+    } else {
+        totalPriceElement.textContent = 'Rp0'; // Jika tidak ada total harga, tampilkan Rp0
+    }
+}
+
+// Saat halaman checkout dimuat
+if (window.location.pathname.includes('checkout.html')) {
+    updateCart();  // Update cart di halaman checkout
+    displayTotalPrice(); // Panggil fungsi untuk menampilkan total harga
+    document.getElementById('confirm-order').addEventListener('click', processCheckout);
+}
+
+function processCheckout() {
+    if (cart.length === 0) {
+        alert('Keranjang Anda kosong!');
+        return;
+    }
+
+    alert('Terima kasih! Pesanan Anda telah dikonfirmasi.');
+    cart = [];
+    updateCart();  // Kosongkan keranjang setelah checkout
+    localStorage.removeItem('cart');  // Hapus data keranjang dari Local Storage
+    localStorage.removeItem('totalPrice'); // Hapus total harga dari Local Storage
+    window.location.href = 'index.html';  // Kembali ke halaman utama
+}
+
